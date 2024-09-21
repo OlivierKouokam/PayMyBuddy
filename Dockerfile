@@ -33,7 +33,7 @@ EXPOSE 8080
 
 # Variables d'environnement de connexion à la BD
 ENV SPRING_DATASOURCE_USERNAME=root
-ENV SPRING_DATASOURCE_PASSWORD=mysqlpwd
+ENV SPRING_DATASOURCE_PASSWORD=password
 ENV SPRING_DATASOURCE_URL=jdbc:mysql://172.17.0.1:3306/db_paymybuddy
 
 # Démarrer l'application
