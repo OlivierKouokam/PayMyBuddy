@@ -11,7 +11,6 @@ WORKDIR /app
 RUN mvn clean package -DskipTests
 
 # Étape 2 : Créer l'image à partir du jar
-# FROM openjdk:17-jdk-slim
 FROM amazoncorretto:17-alpine
 
 # Créer un répertoire pour l'application
