@@ -1,6 +1,5 @@
 # Étape 1 : Construire l'application
-FROM maven:3.8.5-openjdk-17 AS build
-
+FROM maven:3.9-amazoncorretto-17-alpine AS build
 
 # Copier le projet dans le conteneur
 COPY . /app
@@ -9,12 +8,11 @@ COPY . /app
 WORKDIR /app
 
 # Construire l'application
-#RUN mvn clean package
-RUN mvn clean install
+RUN mvn clean package -DskipTests
 
 # Étape 2 : Créer l'image à partir du jar
 # FROM openjdk:17-jdk-slim
-FROM eclipse-temurin:17-jdk-jammy
+FROM amazoncorretto:17-alpine
 
 # Créer un répertoire pour l'application
 WORKDIR /app
