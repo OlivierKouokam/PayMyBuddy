@@ -1,6 +1,6 @@
 # Étape 1 : Construire l'application
-# FROM maven:3.8.5-openjdk-17 AS build
-FROM eclipse-temurin:17-jdk-jammy
+FROM maven:3.8.5-openjdk-17 AS build
+
 
 # Copier le projet dans le conteneur
 COPY . /app
@@ -13,7 +13,8 @@ WORKDIR /app
 RUN mvn clean install
 
 # Étape 2 : Créer l'image à partir du jar
-FROM openjdk:17-jdk-slim
+# FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk-jammy
 
 # Créer un répertoire pour l'application
 WORKDIR /app
